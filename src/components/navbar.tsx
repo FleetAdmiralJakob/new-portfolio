@@ -4,8 +4,13 @@ import React, { useEffect, useState } from "react";
 import style from "./navbar.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import { AiFillHome, AiOutlineGithub } from "react-icons/ai";
-import { BsDiscord, BsFillPersonFill, BsLinkedin } from "react-icons/bs";
+import { AiFillHome } from "react-icons/ai";
+import {
+  BsDiscord,
+  BsFillPersonFill,
+  BsGithub,
+  BsLinkedin,
+} from "react-icons/bs";
 import { HiFolderOpen, HiMail, HiMenuAlt3 } from "react-icons/hi";
 import { ImCross } from "react-icons/im";
 
@@ -47,82 +52,73 @@ export default function Navbar() {
   return (
     <>
       <div className={style.navbar}>
-        <Link className={style.navelement} href="/">
-          <div>
-            <Image
-              src="/home1.png"
-              alt="..."
-              width={30}
-              height={7}
-              className={style.img}
-            />{" "}
-            <p>Home</p>
-          </div>
-        </Link>
-        <Link className={style.navelement} href="/projects">
-          <div>
-            <Image
-              alt="..."
-              src="/edit.png"
-              width={30}
-              height={7}
-              className={style.img}
-            />{" "}
-            <p>Projects</p>
-          </div>
-        </Link>
-        <Link className={style.navelement} href="/skillbar">
-          <div>
-            <Image
-              src="/user1.png"
-              alt="..."
-              width={30}
-              height={7}
-              className={style.img}
-            />{" "}
-            <p>Skills</p>
-          </div>
-        </Link>
-        <Link className={style.navelement} href="/contact">
-          <div>
-            <Image
-              src="/contact1.png"
-              alt="..."
-              width={30}
-              height={7}
-              className={style.img}
-            />{" "}
-            <p>Contact</p>
-          </div>
-        </Link>
-        <Link className={style.views} href={""}>
-          <img
-            alt="Hits"
-            src="https://hits.sh/www.schurig.tech.svg?style=for-the-badge&label=views&extraCount=1000&color=a81a1a&labelColor=1b1b1b"
-          />
-        </Link>
-        <AiOutlineGithub
-          style={{ height: "40px", width: "40px" }}
-          onClick={() => {
-            location.href = "https://github.com/Gamius00";
-          }}
-          className={style.icons}
-        />
-        <BsLinkedin
-          style={{ height: "35px", width: "35px", marginTop: "7px" }}
-          className={style.icons}
-          onClick={() => {
-            location.href =
-              "https://www.linkedin.com/in/fabius-schurig-80713b284/";
-          }}
-        />
-        <BsDiscord
-          style={{ height: "35px", width: "35px", marginTop: "7px" }}
-          className={style.icons}
-          onClick={() => {
-            location.href = "https://discord.gg/HanXgrKr8J";
-          }}
-        />
+        <div className="flex items-center gap-16 pr-7">
+          <Link className={style.navelement} href="/">
+            <div>
+              <Image
+                src="/home1.png"
+                alt="..."
+                width={30}
+                height={7}
+                className={style.img}
+              />{" "}
+              <p>Home</p>
+            </div>
+          </Link>
+          <Link className={style.navelement} href="/projects">
+            <div>
+              <Image
+                alt="..."
+                src="/edit.png"
+                width={30}
+                height={7}
+                className={style.img}
+              />{" "}
+              <p>Projects</p>
+            </div>
+          </Link>
+          <Link className={style.navelement} href="/skillbar">
+            <div>
+              <Image
+                src="/user1.png"
+                alt="..."
+                width={30}
+                height={7}
+                className={style.img}
+              />{" "}
+              <p>Skills</p>
+            </div>
+          </Link>
+          <Link className={style.navelement} href="/contact">
+            <div>
+              <Image
+                src="/contact1.png"
+                alt="..."
+                width={30}
+                height={7}
+                className={style.img}
+              />{" "}
+              <p>Contact</p>
+            </div>
+          </Link>
+          <Link className={style.views} href={""}>
+            <img
+              alt="Hits"
+              src="https://hits.sh/www.schurig.tech.svg?style=for-the-badge&label=views&extraCount=1000&color=a81a1a&labelColor=1b1b1b"
+            />
+          </Link>
+        </div>
+        <div className="flex gap-2">
+          <Link href="https://github.com/Gamius00">
+            <BsGithub className="h-6 w-6" />
+          </Link>
+          <Link href="https://www.linkedin.com/in/fabius-schurig-80713b284/">
+            <BsLinkedin className="h-6 w-6" />
+          </Link>
+          <Link href="https://discord.gg/HanXgrKr8J">
+            <BsDiscord className="h-6 w-6" />
+          </Link>
+        </div>
       </div>
 
       <div className={style.OverLay}>
